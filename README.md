@@ -10,3 +10,13 @@ Make Login Form with React
   - idea : 
     - 회원가입/로그인 모듈을 만들어보자.
     - 뭐부터 시작해야될까..?
+
+> 2018.09.07
+  - title : Backend Open By koa
+  - content :
+    - frontend, backend 구분
+    - backend 폴더 koa 설치 // open Test
+    - nodemon으로 개발환경 setting
+    - koa-router 설치
+  - idea :
+    - api 폴더 만들어서 라우트들 정리 해보자.

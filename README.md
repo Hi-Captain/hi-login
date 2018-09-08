@@ -35,3 +35,14 @@ Make Login Form with React
     - handler 분할 
   - idea :
     - 데이터를 담을 DB를 만들어보자.
+
+> 2018.09.09
+  - title : Ready DB & Api Test
+  - content :
+    - mongoose 설치
+    - dotenv 설치
+    - login, signup 폴더 user로 변경
+    - postman test OK
+  - idea :
+    - 생각해보니깐 폴더를 나눌 필요가 없었다. (생각 좀 하고 작업하자...)
+    - patch 쓸 때, name 검증이 잘 안되네..? 이렇게 쓰는게 아닌가..?

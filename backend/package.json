@@ -4,11 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node src",
-    "start:dev": "nodemon --watch src/ src/index.js"
+    "start": "NODE_PATH=src node src",
+    "start:dev": "NODE_PATH=src nodemon --watch src/ src/index.js"
   },
   "dependencies": {
+    "dotenv": "^6.0.0",
     "koa": "^2.5.2",
-    "koa-router": "^7.4.0"
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.2.13"
   }
 }

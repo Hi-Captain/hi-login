@@ -20,3 +20,11 @@ Make Login Form with React
     - koa-router 설치
   - idea :
     - api 폴더 만들어서 라우트들 정리 해보자.
+
+> 2018.09.08
+  - title : Ready api
+  - content :
+    - login, signup path 분할
+    - Postman test : OK
+  - idea :
+    - handler도 따로 분할 하자.

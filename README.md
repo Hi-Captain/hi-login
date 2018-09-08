@@ -28,3 +28,10 @@ Make Login Form with React
     - Postman test : OK
   - idea :
     - handler도 따로 분할 하자.
+
+> 2018.09.08
+  - title : Ready api 2
+  - content :
+    - handler 분할 
+  - idea :
+    - 데이터를 담을 DB를 만들어보자.

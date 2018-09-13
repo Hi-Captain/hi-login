@@ -68,3 +68,15 @@ exports.update = async (ctx) => {
 
   ctx.body = "Update success \n \n" + user;
 }
+
+exports.list = async (ctx) => {
+  let users;
+
+  try {
+    users = await User.find()
+  } catch (e) {
+    return ctx.throw(500, e);
+  }
+
+  ctx.body = "get list success \n \n" + users;
+}

@@ -46,3 +46,14 @@ Make Login Form with React
   - idea :
     - 생각해보니깐 폴더를 나눌 필요가 없었다. (생각 좀 하고 작업하자...)
     - patch 쓸 때, name 검증이 잘 안되네..? 이렇게 쓰는게 아닌가..?
+
+> 2018.09.13
+  - title : Ready to Frontend 
+  - content :
+    - 확인용 list api 생성
+    - react-router-dom, axios 설치
+    - 디렉토리 정리
+    - route test OK
+  - idea :
+    - sass 설치하기
+    - 프록시 설정해서 프론트에서 백으로 넘겨 볼 것.

@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
-import { Main, Login, Signup, Edit } from './components';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Nav, Main, Login, Signup, Edit } from './components';
+import './styles/base.scss';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="app">
-          <nav>
-            <NavLink to='/' exact>Home</NavLink>
-            <NavLink to='/login'>Login</NavLink>
-            <NavLink to='/signup'>SignUp</NavLink>
-          </nav>
+          <Nav />
           <Switch>
             <Route path="/" exact component={Main} />
             <Route path="/login" component={Login} />

@@ -1,0 +1,22 @@
+@import '../../styles/utils';
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background-color: $color-sky;
+  color: #fff;
+  height: 4.4rem;
+
+  & a{
+    color: $color-white;
+    transition-duration: .2s;
+    &:hover{color: $color-gary;}
+  }
+  .wrap{
+    .sep{
+      margin: 0 .8rem;
+    }
+  }
+}

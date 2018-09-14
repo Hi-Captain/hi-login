@@ -1,0 +1,43 @@
+@import '../../styles/utils';
+
+.signup{
+  &-container{
+    margin: 0 auto;
+    width: 35rem;
+    height: 47rem;
+
+    h1{
+      text-align: center;
+      color: $color-sky;
+      padding: 0 1rem;
+      font-size: $font-size-XXL;
+      margin-bottom: 2rem;
+    }
+    label{
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+      font-size: $font-size-S;
+    }
+    input{
+      margin: .5rem auto 1.5rem;
+      display: block;
+      width: 80%;
+      height: 4rem;
+      padding: 1.5rem;
+      font-size: $font-size-M;
+    }
+    button{
+      display: block;
+      width: 80%;
+      height: 6rem;
+      margin: 0 auto;
+      margin-top: 3rem;
+      color: $color-white;
+      background: $color-sky;
+      font-size: $font-size-L;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

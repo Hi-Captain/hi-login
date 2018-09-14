@@ -4,9 +4,9 @@ import './Main.scss';
 class Main extends Component {
   render() {
     return (
-      <div>
-        Main Page
-      </div>
+      <section className="main">
+        메인 페이지 입니다.
+      </section>
     );
   }
 }

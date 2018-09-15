@@ -57,3 +57,22 @@ Make Login Form with React
   - idea :
     - sass 설치하기
     - 프록시 설정해서 프론트에서 백으로 넘겨 볼 것.
+
+> 2018.09.14
+  - title : FE Styling
+  - content : 
+    - sass 설치
+    - 기본 스타일 설정
+  - idea :
+    - 회원가입 할 때 비밀번호 확인 처리하기
+    - http method 넘겨서 회원가입 부분만 테스트 해 볼 것
+
+> 2018.09.15
+  - title : Sign Up Test
+  - content : 
+    - proxy 설정
+    - post '/api/users' Test [OK]
+  - idea :
+    - 아이디 중복, 비밀번호 확인, 이메일 형식확인 고민해 볼 것
+    - 로그인, 로그아웃, 회원탈퇴, 고민해 볼 것
+    - 회원가입 구현방법 좀 더 찾아 볼 것

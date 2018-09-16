@@ -1,6 +1,6 @@
 const User = require('models/user')
 
-exports.login = async (ctx) => {
+exports.check = async (ctx) => {
   const { name } = ctx.params;
 
   let user;
@@ -16,12 +16,34 @@ exports.login = async (ctx) => {
   }
 
   if(!user) {
-    ctx.status = 404;
-    ctx.body = { message : 'user not found'}
-    return;
+    return ctx.body = "pass"
+  } else {
+    return ctx.body = "fail"
   }
+}
 
-  ctx.body = "Login Success \n \n" + user;
+exports.login = async (ctx) => {
+  const { id, pw } = ctx.request.body;
+
+  // let user;
+
+  // try {
+  //   user = await User.findOne({userName: name}).exec();
+  // } catch (e) {
+  //   if(e.name === 'CastError'){
+  //     ctx.status = 400;
+  //     return
+  //   }
+  //   return ctx.throw(500, e);
+  // }
+
+  // if(!user) {
+  //   ctx.status = 404;
+  //   ctx.body = { message : 'user not found'}
+  //   return;
+  // }
+
+  // ctx.body = "Login Success \n \n" + user;
 }
 
 exports.delete = async (ctx) => {

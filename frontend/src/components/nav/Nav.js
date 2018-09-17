@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Nav.scss';
+import {Login, LogOut} from './btns'
 
-class Nav extends Component {
-  render() {
-    return (
-      <nav>
-        <NavLink className="btn-home" to='/' exact>Home</NavLink>
-        <div className="wrap">
-          <NavLink className="btn-login" to='/login'>Login</NavLink>
-          <span className="sep">/</span>
-          <NavLink className="btn-signup" to='/signup'>SignUp</NavLink>
-        </div>
-      </nav>
-    );
-  }
+const Nav = ({isLogin, logOut}) => {
+  return (
+    <nav>
+    <NavLink className="btn-home" to='/' exact>Home</NavLink>
+    {isLogin ? <LogOut logOut/> : <Login />}
+  </nav>
+  );
 }
 
 export default Nav;

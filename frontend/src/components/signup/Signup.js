@@ -66,8 +66,16 @@ class Signup extends Component {
   _send = () => {
     if(document.querySelectorAll('.pass').length === 4){
       axios.post('/api/users/signup', this.state).then(res => {
-        console.log(res)
-      }).catch(e => {
+        alert('정상적으로 등록되었습니다.')
+        document.querySelector('#input_id').className = "noCheck"
+      }).then(
+        this.setState({
+          userName : '',
+          email : '',
+          password : '',
+          passwordRe : ''
+        })
+      ).catch(e => {
         console.log(e)
       })
     } else if(document.querySelectorAll('.noCheck').length === 1){

@@ -23,27 +23,38 @@ exports.check = async (ctx) => {
 }
 
 exports.login = async (ctx) => {
-  const { id, pw } = ctx.request.body;
+  const { idInfo, pwInfo } = ctx.request.body;
 
-  // let user;
+  let user;
 
-  // try {
-  //   user = await User.findOne({userName: name}).exec();
-  // } catch (e) {
-  //   if(e.name === 'CastError'){
-  //     ctx.status = 400;
-  //     return
-  //   }
-  //   return ctx.throw(500, e);
-  // }
+  try {
+    user = await User.findOne({userName: idInfo}).exec() || await User.findOne({email: idInfo}).exec();
+  } catch (e) {
+    ctx.body = e
+    return ctx.throw(500, e);
+  }
 
-  // if(!user) {
-  //   ctx.status = 404;
-  //   ctx.body = { message : 'user not found'}
-  //   return;
-  // }
-
-  // ctx.body = "Login Success \n \n" + user;
+  if(user) {
+    if(user.password === pwInfo){
+      ctx.body = { 
+        message : `로그인 되었습니다.`,
+        idInfo : idInfo
+      }
+      return;  
+    } else {
+      ctx.body = { 
+        message : '비밀번호가 틀렸습니다.',
+        error : 'pwInfo'
+      }
+      return;
+    }
+  } else {
+    ctx.body = { 
+      message : '존재하지 않는 아이디 입니다.',
+      error : 'idInfo'
+    }
+    return;
+  }
 }
 
 exports.delete = async (ctx) => {

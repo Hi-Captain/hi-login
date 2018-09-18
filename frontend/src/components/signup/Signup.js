@@ -47,7 +47,6 @@ class Signup extends Component {
     const { userName } = this.state
     if(userName.match(idReg) !== null){
       axios.get(`/api/users/${userName}`).then(res => {
-        console.log(res.data)
         document.querySelector('#input_id').className = res.data
         if(res.data === 'pass'){
           alert('사용 가능한 아이디 입니다.')
@@ -68,6 +67,7 @@ class Signup extends Component {
       axios.post('/api/users/signup', this.state).then(res => {
         alert('정상적으로 등록되었습니다.')
         document.querySelector('#input_id').className = "noCheck"
+        document.querySelector('.btn-home').click()
       }).then(
         this.setState({
           userName : '',

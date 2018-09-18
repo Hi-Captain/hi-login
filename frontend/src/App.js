@@ -6,21 +6,20 @@ import './styles/base.scss';
 
 class App extends Component {
   state = {
-    userId : '',
+    userInfo : '',
     logedIn : false
   }
   render() {
-    console.log(this.state)
-    const {userId , logedIn} = this.state
+    const {userInfo , logedIn} = this.state
     return (
       <BrowserRouter>
         <div className="app">
-          <Nav isLogin={logedIn}/>
+          <Nav isLogin={logedIn} userId={userInfo.userName} logOut={this._LogOut}/>
           <Switch>
-            <Route path="/" exact render={() => <Main userId={userId}/>}/>
-            <Route path="/login" render={() => <Login goLogin={this._goLogin}/>} />
+            <Route path="/" exact render={() => <Main userId={userInfo.userName}/>} />
+            <Route path="/edit" render={() => <Edit userInfo={userInfo} />} />
+            <Route path="/login" render={() => <Login isLogin={logedIn} goLogin={this._goLogin}/>} />
             <Route path="/signup" component={Signup} />
-            <Route path="/:id/edit" component={Edit} />
           </Switch>
         </div>
       </BrowserRouter>
@@ -28,8 +27,7 @@ class App extends Component {
   }
   _goLogin = (userInfo) => {
     axios.post('/api/users/login', userInfo).then(res => {
-      console.log(res.data)
-      const {error, message} = res.data
+      const {info, error, message} = res.data
       alert(message)
       if(Boolean(error)){
         document.querySelector('[name=pwInfo]').value = ''
@@ -38,7 +36,7 @@ class App extends Component {
         }
       } else {
         this.setState({
-          userId : res.data.idInfo,
+          userInfo : info,
           logedIn : true
         })
         document.querySelector('.btn-home').click()
@@ -49,10 +47,15 @@ class App extends Component {
   }
   
   _LogOut = () => {
-    this.setState({
-      userId : '',
-      logedIn : false
-    })
+    const confirm = window.confirm('로그아웃 하시겠습니까?')
+    if(confirm){
+      alert('로그아웃 되었습니다.')
+      this.setState({
+        userId : '',
+        logedIn : false
+      })
+      window.location.href = '/'
+    }
   }
 }
 

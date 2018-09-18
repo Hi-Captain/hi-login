@@ -7,14 +7,17 @@ class Login extends Component {
     pwInfo : ''
   }
   render() {
+    const { isLogin } = this.props
     return (
       <section className="login">
+        {isLogin ? <h3>로그인 되었습니다.</h3> :
         <div className="login-container">
           <h1>Hi-Login</h1>
-          <input type="text" name="idInfo" placeholder="아이디 or 이메일" onChange={this._typing} autoFocus/>
+          <input type="text" name="idInfo" placeholder="아이디" onChange={this._typing} autoFocus/>
           <input type="password" name="pwInfo" onChange={this._typing} placeholder="비밀번호"/>
           <button onClick={this._sendUserInfo}>로그인</button>
         </div>
+        }
       </section>
     );
   }

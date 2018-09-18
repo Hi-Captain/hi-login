@@ -28,7 +28,7 @@ exports.login = async (ctx) => {
   let user;
 
   try {
-    user = await User.findOne({userName: idInfo}).exec() || await User.findOne({email: idInfo}).exec();
+    user = await User.findOne({userName: idInfo}).exec();
   } catch (e) {
     ctx.body = e
     return ctx.throw(500, e);
@@ -38,7 +38,7 @@ exports.login = async (ctx) => {
     if(user.password === pwInfo){
       ctx.body = { 
         message : `로그인 되었습니다.`,
-        idInfo : idInfo
+        info : user
       }
       return;  
     } else {

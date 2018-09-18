@@ -1,6 +1,11 @@
 @import '../../styles/utils';
 
 .login{
+  h3{
+    font-size: $font-size-L;
+    font-weight: 400;
+  }
+
   &-container{
     margin: 0 auto;
     margin-top: -2rem;
@@ -14,6 +19,7 @@
       font-size: $font-size-XXL;
       margin-bottom: 3rem;
     }
+
     input{
       margin: 0 auto;
       display: block;

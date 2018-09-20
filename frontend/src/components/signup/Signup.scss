@@ -22,7 +22,7 @@
       font-size: $font-size-S;
       
       .idConfirm{
-        border: 1px solid #ccc;
+        border: 1px solid $color-light-grey;
         padding: .3rem 1rem;
         font-size: $font-size-XS;
       }
@@ -38,10 +38,10 @@
 
       &:focus{
         &.fail{
-          border: 2px solid red;
+          border: 2px solid $color-red;
         }
         &.pass{
-          border: 2px solid green;
+          border: 2px solid $color-green;
         }
       }
     }

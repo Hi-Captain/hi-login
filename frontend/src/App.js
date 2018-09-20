@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Nav, Main, Login, Signup, Edit } from './components';
-import './styles/base.scss';
 
 class App extends Component {
   state = {
-    userInfo : '',
+    userInfo : {},
     logedIn : false
   }
   render() {
@@ -17,7 +16,7 @@ class App extends Component {
           <Nav isLogin={logedIn} userId={userInfo.userName} logOut={this._LogOut}/>
           <Switch>
             <Route path="/" exact render={() => <Main userId={userInfo.userName}/>} />
-            <Route path="/edit" render={() => <Edit userInfo={userInfo} />} />
+            <Route path="/edit" render={() => <Edit userInfo={userInfo} delId={this._delId} />} />
             <Route path="/login" render={() => <Login isLogin={logedIn} goLogin={this._goLogin}/>} />
             <Route path="/signup" component={Signup} />
           </Switch>
@@ -44,6 +43,20 @@ class App extends Component {
     }).catch(e => {
       console.log(e)
     })
+  }
+
+  _delId = () => {
+    const userId = this.state.userInfo.userName,
+          confirm = window.confirm('정말 삭제 하시겠습니까?')
+    if(confirm){
+      axios.delete(`/api/users/${userId}`).then(
+        alert('삭제 되었습니다.')
+      ).then(
+        window.location.href = '/'
+      ).catch(e => {
+        console.log(e)
+      })
+    }
   }
   
   _LogOut = () => {

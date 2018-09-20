@@ -47,11 +47,27 @@
 
         &:focus{
           &.fail{
-            border: 2px solid red;
+            border: 2px solid $color-red;
           }
           &.pass{
-            border: 2px solid green;
+            border: 2px solid $color-green;
           }
+        }
+      }
+      .del{
+        width: 80%;
+        height: 3rem;
+        margin: 1rem auto 2rem;
+        border: 1px solid $color-red;
+        color: $color-red;
+        opacity: .5;
+        cursor: pointer;
+        transition-duration: .4s;
+
+        &:hover{
+          color: $color-white;
+          background-color: $color-red;
+          opacity: 1;
         }
       }
     }
@@ -59,7 +75,6 @@
     .btns{
       display: flex;
       justify-content: center;
-      margin-top: 5rem;
 
       & > *{
         display: block;
@@ -76,11 +91,11 @@
 
         &:hover{
           transform:translateY(-.2rem);
-          box-shadow: 2px 3px #88888834;
+          box-shadow: 2px 3px $color-shadow;
         }
         &:active{
           transform:translateY(.1rem);
-          box-shadow: -1px -1px #88888834;
+          box-shadow: -1px -1px $color-shadow;
         }
       }
       button{

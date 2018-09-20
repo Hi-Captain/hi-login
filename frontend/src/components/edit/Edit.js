@@ -21,7 +21,7 @@ class Edit extends Component {
     }
   }
   render() {
-    const { userInfo } = this.props
+    const { userInfo, delId } = this.props
     const { email, password, passwordRe } = this.state;
     const pwConfirm = (password === passwordRe),
           emailConfirm = (email.match(mailReg) !== null)
@@ -45,6 +45,9 @@ class Edit extends Component {
             <div className="row">
               <label htmlFor="input_pw-re">비밀번호 확인 : </label>
               <input className={ pwConfirm && passwordRe !== '' ? "pass" : "fail" } type="password" id="input_pw-re" name="passwordRe" value={passwordRe} onChange={this._typing}/>  
+            </div>
+            <div  className="row">
+              <button className="del" onClick={delId}>삭제하기</button>
             </div>
             <div className="btns">
               <button onClick={this._goUpdate}>수정하기</button>
